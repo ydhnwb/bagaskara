@@ -21,3 +21,8 @@ class ScanFromCamera implements AksaraEvent{
   @override
   List<Object> get props => null;
 }
+
+class InitSettings implements AksaraEvent{
+  @override
+  List<Object> get props => null;
+}

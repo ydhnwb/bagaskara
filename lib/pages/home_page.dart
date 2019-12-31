@@ -3,6 +3,7 @@ import 'package:bagaskara_redefined/bloc/aksara/aksara_event.dart';
 import 'package:bagaskara_redefined/bloc/aksara/aksara_state.dart';
 import 'package:bagaskara_redefined/pages/setting_page.dart';
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,6 +99,15 @@ class _HomePageState extends State<HomePage> {
                                       setState(() {
                                         _latinToAksara = !_latinToAksara;
                                       });
+
+                                      if(state is AksaraLoadedState){
+                                        _domainTextController.text = _targetText;
+                                        if(_latinToAksara){
+                                          _aksaraBloc.add(LatinToAksara(s:_domainTextController.text.toString().trim()));
+                                        }else{
+                                        _aksaraBloc.add(AksaraToLatin(s: _domainTextController.text.toString().trim()));
+                                        }
+                                      }
                                     },
                                   ),
                                 ),
@@ -192,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                                 children: <Widget>[
                                   Spacer(),
                                   if(state is AksaraLoadedState)
-                                    _showCopyButton(_targetText.isEmpty)
+                                    _showCopyButton(_targetText.isNotEmpty, context)
                                 ],
                               ),
                             )
@@ -221,12 +231,14 @@ class _HomePageState extends State<HomePage> {
   }
 
 
-  _showCopyButton(bool state){
+  _showCopyButton(bool state, BuildContext ctx){
     if(state){
       return IconButton(
         icon: Icon(Icons.content_copy, color: Colors.grey,),
         onPressed: (){
-          print("to copy");
+          Clipboard.setData(ClipboardData(text: _targetText));
+          Scaffold.of(ctx).showSnackBar(
+            SnackBar(content: Text("Berhasil  disalin"),));
         },
       );
     }

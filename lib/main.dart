@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:bagaskara_redefined/pages/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(MyApp());
+void main(){
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
