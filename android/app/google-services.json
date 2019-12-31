@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1092264777843",
+    "firebase_url": "https://bagaskara-translator.firebaseio.com",
+    "project_id": "bagaskara-translator",
+    "storage_bucket": "bagaskara-translator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092264777843:android:79fe70e799b7efcea03206",
+        "android_client_info": {
+          "package_name": "com.ydhnwb.bagaskara_redefined"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092264777843-3oc79021ne3dnorntstsqdlnikp38ab5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYzQQAXP3HCg99deBvUQRCs_Q4BFyEXk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092264777843-3oc79021ne3dnorntstsqdlnikp38ab5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1092264777843-po7sadk84pogkdq8stdvp3g153clcvdr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ydhnwb.bagaskaraRedefined"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
