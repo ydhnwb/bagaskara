@@ -15,9 +15,9 @@ class AksaraLoadingState extends AksaraState{
 }
 
 class AksaraLoadedState extends AksaraState{
-  String domainText = "";
-  String targetText = "";
-  bool isFromFile = false;
+  final String domainText;
+  final String targetText;
+  final bool isFromFile;
   AksaraLoadedState({@required this.domainText, @required this.targetText, @required this.isFromFile});
   @override
   List<Object> get props => [domainText, targetText];

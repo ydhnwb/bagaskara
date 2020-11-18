@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
             child: CircularProgressIndicator(),
           );
         } else if (state is AksaraLoadingState) {
-          print("is load");
           return Center(
             child: CircularProgressIndicator(),
           );
@@ -69,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                   PreferredSize(
                     preferredSize: Size(_size.width, 56),
                     child: Material(
-                      color: Colors.white,
+                      // color: Colors.white,
                       elevation: 2.0,
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 16),
@@ -138,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       padding: EdgeInsets.only(
                           top: 0, bottom: 20, left: 20, right: 20),
-                      decoration: BoxDecoration(color: Colors.white),
+                      // decoration: BoxDecoration(color: Colors.white),
                       width: _size.width,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -225,28 +224,26 @@ class _HomePageState extends State<HomePage> {
             barrierDismissible: false,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text('Informasi'),
-                content: const Text(
-                    'Scan teks via camera hanya bisa mendeteksi tulisan latin. Mode akan diubah ke Latin -> Aksara'),
-                actions: <Widget>[
-                  FlatButton(
-                    child: const Text('BATAL'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  FlatButton(
-                      child: const Text('MENGERTI'),
+                  title: Text('Informasi'),
+                  content: const Text(
+                      'Scan teks via camera hanya bisa mendeteksi tulisan latin. Mode akan diubah ke Latin -> Aksara'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: const Text('BATAL'),
                       onPressed: () {
-                        setState(() {
-                          _latinToAksara = true;
-                        });
                         Navigator.pop(context);
-                        _aksaraBloc.add(ScanFromCamera());
-                      }
-                  )
-                ]
-              );
+                      },
+                    ),
+                    FlatButton(
+                        child: const Text('MENGERTI'),
+                        onPressed: () {
+                          setState(() {
+                            _latinToAksara = true;
+                          });
+                          Navigator.pop(context);
+                          _aksaraBloc.add(ScanFromCamera());
+                        })
+                  ]);
             },
           );
         },

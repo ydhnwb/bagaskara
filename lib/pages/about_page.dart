@@ -17,53 +17,82 @@ class AboutPage extends StatelessWidget {
               child: InkWell(
                 onTap: () {},
                 child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("Built by @ydhnwb", style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                      ),),
-                      Text("Dibuat menggunakan flutter dan firebase ml-vision. Lihat projek secara utuh di github [https://github.com/ydhnwb/bagaskara]."),
-                    ],
-                  )
-                ),
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Built by Prieyudha Akadita S",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                            "Built using Flutter and Firebase ML-Vision. This is an open-source app that you can see the code on my github"),
+                        RaisedButton(
+                          onPressed: () =>
+                              _launchURL("https://github.com/ydhnwb/bagaskara"),
+                          child: Text("See on github"),
+                        )
+                      ],
+                    )),
               ),
             ),
-            
-            
-
             Card(
               child: InkWell(
-                onTap: (){},
+                onTap: () {},
                 child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("Thanks to @bennylin", style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                      ),),
-                      Text("Terima kasih untuk @bennylin yang sudah membuat transliterasi jawa dan mengconvert library aksara jawa ke dart / flutter plugin."),
-                    ],
-                  )
-                ),
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Thanks to Fanni Naditya Putra",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                            "Big thanks to Fanni Naditya Putra for make this app available on Play Store"),
+                        RaisedButton(
+                          onPressed: () =>
+                              _launchURL("https://instagram.com/fanninputra"),
+                          child: Text("Visit his profile"),
+                        )
+                      ],
+                    )),
               ),
             ),
-
+            Card(
+              child: InkWell(
+                onTap: () {},
+                child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Thanks to Benny Lin",
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        Text(
+                            "Thanks to Benny Lin who created a library aksara jawa for dart"),
+                      ],
+                    )),
+              ),
+            ),
           ],
         ),
       ),
-      
     );
   }
 
-  _launchURL(String s) async {
-    String url = s;
+  _launchURL(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
