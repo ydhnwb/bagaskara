@@ -166,7 +166,9 @@ class _HomePageState extends State<HomePage> {
                           TextField(
                             controller: _domainTextController,
                             maxLines: null,
-                            style: TextStyle(fontSize: 24),
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontFamily: "NotoSansJavanese"),
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: (_latinToAksara)
